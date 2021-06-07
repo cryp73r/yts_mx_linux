@@ -470,7 +470,7 @@ class DisplayData extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 3.0, bottom: 3.0),
                   ),
                   SizedBox(
-                    height: _height * 0.5,
+                    height: _height * 0.57,
                     child: GridView.builder(
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HowToDownloadScreen extends StatelessWidget {
@@ -11,11 +12,11 @@ class HowToDownloadScreen extends StatelessWidget {
         title: const Text("How To Download"),
         centerTitle: true,
       ),
-      body: stepsHolder(),
+      body: stepsHolder(context),
     );
   }
 
-  Widget stepsHolder() {
+  Widget stepsHolder(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(15.0),
       child: ListView(
@@ -71,87 +72,75 @@ class HowToDownloadScreen extends StatelessWidget {
             child: Container(
                 margin: const EdgeInsets.only(top: 7.0),
                 child: Text(
-                  "1. Flud - Torrent Downloader (Made in India)",
+                  "1. qBittorrent",
                   style: linkStyle(),
                   textAlign: TextAlign.justify,
                 )),
-            onTap: () async {
-              if (await canLaunch(
-                  "https://play.google.com/store/apps/details?id=com.delphicoder.flud")) {
-                await launch(
-                    "https://play.google.com/store/apps/details?id=com.delphicoder.flud");
-              } else {
-                throw "Could not launch";
-              }
+            onTap: () {
+              Clipboard.setData(ClipboardData(text: "apt install qbittorrent"));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Copied to Clipboard"),
+                    ));
             },
           ),
           InkWell(
             child: Container(
                 margin: const EdgeInsets.only(top: 5.0),
                 child: Text(
-                  "2. LibreTorrent",
+                  "2. Deluge",
                   style: linkStyle(),
                   textAlign: TextAlign.justify,
                 )),
-            onTap: () async {
-              if (await canLaunch(
-                  "https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent")) {
-                await launch(
-                    "https://play.google.com/store/apps/details?id=org.proninyaroslav.libretorrent");
-              } else {
-                throw "Could not launch";
-              }
+            onTap: () {
+              Clipboard.setData(ClipboardData(text: "apt install deluge"));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Copied to Clipboard"),
+                    ));
             },
           ),
           InkWell(
             child: Container(
                 margin: const EdgeInsets.only(top: 5.0),
                 child: Text(
-                  "3. BitTorrent® - Torrent Downloads",
+                  "3. Transmission",
                   style: linkStyle(),
                   textAlign: TextAlign.justify,
                 )),
-            onTap: () async {
-              if (await canLaunch(
-                  "https://play.google.com/store/apps/details?id=com.bittorrent.client")) {
-                await launch(
-                    "https://play.google.com/store/apps/details?id=com.bittorrent.client");
-              } else {
-                throw "Could not launch";
-              }
+            onTap: () {
+              Clipboard.setData(ClipboardData(text: "apt install transmission"));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Copied to Clipboard"),
+                    ));
             },
           ),
           InkWell(
             child: Container(
                 margin: const EdgeInsets.only(top: 5.0),
                 child: Text(
-                  "4. µTorrent® - Torrent Downloader",
+                  "4. KTorrent",
                   style: linkStyle(),
                   textAlign: TextAlign.justify,
                 )),
-            onTap: () async {
-              if (await canLaunch(
-                  "https://play.google.com/store/apps/details?id=com.utorrent.client")) {
-                await launch(
-                    "https://play.google.com/store/apps/details?id=com.utorrent.client");
-              } else {
-                throw "Could not launch";
-              }
+            onTap: () {
+              Clipboard.setData(ClipboardData(text: "apt install ktorrent"));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text("Copied to Clipboard"),
+                    ));
             },
           ),
           InkWell(
             child: Container(
                 margin: const EdgeInsets.only(top: 5.0),
                 child: Text(
-                  "5. WeTorrent - Torrent Downloader",
+                  "5. Tixati",
                   style: linkStyle(),
                   textAlign: TextAlign.justify,
                 )),
             onTap: () async {
               if (await canLaunch(
-                  "https://play.google.com/store/apps/details?id=co.we.torrent")) {
+                  "https://www.tixati.com/download/linux.html")) {
                 await launch(
-                    "https://play.google.com/store/apps/details?id=co.we.torrent");
+                    "https://www.tixati.com/download/linux.html");
               } else {
                 throw "Could not launch";
               }
